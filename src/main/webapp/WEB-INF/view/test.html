@@ -3,8 +3,38 @@
 <head>
     <title>Greeting</title>
     <meta charset="utf-8"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-<p th:text="${recipient}"></p>
+<!--<p th:text="${recipient}"></p>-->
+
+<table border="1" cellpadding="10">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>surname</th>
+        <th>phone</th>
+        <th>rating</th>
+
+        <!--            <th>Actions</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.surname}"></td>
+        <td th:text="${customer.phone}"></td>
+        <td th:text="${customer.rating}"></td>
+        <!--            <td>-->
+        <!--                <a th:href="/@{'/edit/' + ${employee.id}}">Edit</a>-->
+        <!--                &nbsp;&nbsp;&nbsp;-->
+        <!--                <a th:href="/@{'/delete/' + ${employee.id}}">Delete</a>-->
+        <!--            </td>-->
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

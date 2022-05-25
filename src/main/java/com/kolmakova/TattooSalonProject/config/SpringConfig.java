@@ -1,6 +1,7 @@
 package com.kolmakova.TattooSalonProject.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,29 +10,29 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.LocaleContextResolver;
+import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+import org.thymeleaf.templatemode.TemplateMode;
 
-import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 import java.util.Locale;
 
 @Configuration
-@ComponentScan("com.kolmakova.TattooSalonProject")
+@EnableWebMvc
+@ComponentScan("com.kolmakova.TattooSalonProject.*")
 @PropertySource("classpath:application.properties")
-public class SpringConfig implements WebMvcConfigurer {
+public class SpringConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
-    private ServletContext servletContext;
-    @Autowired
     private Environment env;
+    @Autowired
+    private ApplicationContext appContext;
 
     @Bean
     public DataSource dataSource() {
@@ -51,12 +52,15 @@ public class SpringConfig implements WebMvcConfigurer {
         return new JdbcTemplate(dataSource);
     }
 
-    @Bean
-    public ServletContextTemplateResolver templateResolver() {
-        ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContext);
+    @Autowired
+    @Bean(name = "templateResolver")
+    public SpringResourceTemplateResolver templateResolver() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 
-        templateResolver.setCharacterEncoding("UTF-8");
+        templateResolver.setApplicationContext(appContext);
         templateResolver.setCacheable(false);
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setPrefix("/WEB-INF/view/");
         templateResolver.setSuffix(".html");
 
@@ -64,12 +68,12 @@ public class SpringConfig implements WebMvcConfigurer {
     }
 
     @Autowired
-    @Bean
-    public SpringTemplateEngine templateEngine(ServletContextTemplateResolver templateResolver) {
+    @Bean(name = "templateEngine")
+    public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver templateResolver) {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 
-        templateEngine.setTemplateResolver(templateResolver);
         templateEngine.setEnableSpringELCompiler(true);
+        templateEngine.setTemplateResolver(templateResolver);
 
         return templateEngine;
     }
@@ -80,15 +84,8 @@ public class SpringConfig implements WebMvcConfigurer {
 
         resolver.setTemplateEngine(templateEngine(templateResolver()));
         resolver.setCharacterEncoding("UTF-8");
+        resolver.setOrder(1);
         registry.viewResolver(resolver);
-    }
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/img/**")
-                .addResourceLocations("/resources/img/");
-        registry.addResourceHandler("/css/**")
-                .addResourceLocations("/resources/css/");
     }
 
     @Override
@@ -115,10 +112,10 @@ public class SpringConfig implements WebMvcConfigurer {
     }
 
     @Bean(name = "localeResolver")
-    public CookieLocaleResolver localeResolver() {
-        CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+    public LocaleContextResolver localeResolver() {
+        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
 
-        localeResolver.setDefaultLocale(new Locale("ru"));
+        localeResolver.setDefaultLocale(new Locale("en"));
 
         return localeResolver;
     }

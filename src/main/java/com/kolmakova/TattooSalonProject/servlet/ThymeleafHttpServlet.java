@@ -27,12 +27,16 @@ public abstract class ThymeleafHttpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         WebContext context = new WebContext(req, resp, req.getServletContext());
         String view = get(req, resp, context);
+        resp.setCharacterEncoding("UTF-8");
         engine.process(view, context, resp.getWriter());
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
+        WebContext context = new WebContext(req, resp, req.getServletContext());
+        String view = post(req, resp, context);
+        resp.setCharacterEncoding("UTF-8");
+        engine.process(view, context, resp.getWriter());
     }
 
     @Override

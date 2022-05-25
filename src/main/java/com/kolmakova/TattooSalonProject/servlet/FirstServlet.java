@@ -8,21 +8,23 @@ import org.thymeleaf.context.WebContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
-@WebServlet("/")
+@WebServlet(urlPatterns = "/test")
 public class FirstServlet extends ThymeleafHttpServlet {
     @Autowired
     private AbstractDAO<Customer> abstractDAO;
 
     @Override
     protected String get(HttpServletRequest req, HttpServletResponse resp, WebContext context) {
-        context.setVariable("recipient", "Friend");
-
-        return "index";
+        List<Customer> customers = abstractDAO.findAll();
+        context.setVariable("customers", customers);
+        return "test";
     }
 
     @Override
     protected String post(HttpServletRequest req, HttpServletResponse resp, WebContext context) {
+        String name = req.getParameter("customerName");
         return "some.html";
     }
 

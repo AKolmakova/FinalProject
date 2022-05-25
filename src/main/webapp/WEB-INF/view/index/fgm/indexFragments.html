@@ -1,0 +1,311 @@
+<div th:fragment="banner" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div id="slider">
+        <div>
+            <img th:src="@{/img/slideTattoo2.jpg}" alt="..." height="710">
+        </div>
+        <div>
+            <img th:src="@{/img/slideTattoo4.jpg}" alt="..." height="710">
+        </div>
+        <div>
+            <img th:src="@{/img/slideTattoo3.jpg}" alt="..." height="710">
+        </div>
+    </div>
+</div>
+
+
+<div th:fragment="newsOrAdvertising" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <nav class="collapse d-lg-block sidebarleft collapse bg-white">
+        <div class="list-group list-group-flush mx-3 mt-4">
+            <article class="grid-item">
+                <div class="image">
+                    <img th:src="@{/img/advertising.jpg}" alt="..." />
+                </div>
+                <div class="info">
+                    <h2>Название</h2>
+                    <div class="info-text">
+                        <p>Текст</p>
+                    </div>
+                    <div class="button-wrap">
+                        <a class="atuin-btn" href="#link">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+            <br>
+            <article class="grid-item">
+                <div class="image">
+                    <img th:src="@{/img/advertising.jpg}" alt="..." />
+                </div>
+                <div class="info">
+                    <h2>Название</h2>
+                    <div class="info-text">
+                        <p>Текст</p>
+                    </div>
+                    <div class="button-wrap">
+                        <a class="atuin-btn" href="#link">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </nav>
+
+    <nav class="collapse d-lg-block sidebarright collapse bg-white">
+        <div class="list-group list-group-flush mx-3 mt-4">
+            <article class="grid-item">
+                <div class="image">
+                    <img th:src="@{/img/advertising.jpg}" alt="..."/>
+                </div>
+                <div class="info">
+                    <h2>Название</h2>
+                    <div class="info-text">
+                        <p>Текст</p>
+                    </div>
+                    <div class="button-wrap">
+                        <a class="atuin-btn" href="#link">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+            <br>
+            <article class="grid-item">
+                <div class="image">
+                    <img th:src="@{/img/advertising.jpg}" alt="..." />
+                </div>
+                <div class="info">
+                    <h2>Название</h2>
+                    <div class="info-text">
+                        <p>Текст</p>
+                    </div>
+                    <div class="button-wrap">
+                        <a class="atuin-btn" href="#link">Подробнее</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </nav>
+</div>
+
+<div th:fragment="firstContentDivider" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="info_box normal">
+    <div class="info_box_content__main">
+        <p>Наши работы — наша гордость</p>
+        <br>
+        <a id="but"href="Catalog.html" class="floating-button">Галерея</a>
+    </div>
+</div>
+</div>
+
+<div th:fragment="secondContentDivider" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="info_box normal">
+    <div class="info_box_content">
+        <p>Предлагаем тату в стилях</p>
+    </div>
+</div>
+</div>
+
+<div th:fragment="thirdContentDivider" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="info_box normal">
+    <div class="info_box_content">
+        <p>Наш салон</p>
+    </div>
+</div>
+</div>
+
+<div th:fragment="fourthContentDivider" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="info_box normal">
+        <div class="info_box_content">
+            <p>Наша команда</p>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="articles" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="container__icon">
+    <div class="row">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="ico__cont__wrapper">
+                <div class="iconblock-1">
+                    <div class="icon">
+                        <img th:src="@{/img/ico1.jpg}" alt="..." />
+                    </div>
+                    <h3>Индивидуальный подход</h3>
+                    <p style="text-indent: 55px;" >Мы работаем с каждым клиентом индивидуально, ведь татуировка на теле каждого человека смотрится совершенно особым образом.
+                        В наших салонах Вы получите полную консультацию по выбору рисунка и места для его нанесения, мы учитываем особенности каждого конкретного человека.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="ico__cont__wrapper">
+                <div class="iconblock-1">
+                    <div class="icon">
+                        <img th:src="@{/img/ico2.jpg}" alt="..." />
+                    </div>
+                    <h3>Согласование нюансов</h3>
+                    <p style="text-indent: 55px;">Прежде чем набить тату, наши специалисты подробно консультируют заказчика со всеми нюансами выбранной техники.
+                        Мы объясняем, какие противопоказания существуют и что нужно учитывать, выбирая участок для нанесения тату.
+                        Мы также рассказываем о правилах поведения после нанесения татуировки и об уходе за ней.
+                        Выполнение всех этих рекомендаций напрямую влияет на качество Вашей тату.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="ico__cont__wrapper">
+                <div class="iconblock-1">
+                    <div class="icon">
+                        <img th:src="@{/img/ico3.jpg}" alt="..." />
+                    </div>
+                    <h3>Проверенное оборудование</h3>
+                    <p style="text-indent: 55px;">Для нанесения татуировки в наших салонах применяется только проверенное и современное оборудование, которое позволяет выполнить процедуру с максимальным качеством.
+                        Соблюдается стерильность при выполнении тату.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="ico__cont__wrapper">
+                <div class="iconblock-1">
+                    <div class="icon">
+                        <img th:src="@{/img/ico4.jpg}" alt="..." />
+                    </div>
+                    <h3>Противопоказания</h3>
+                    <p style="text-indent: 55px;">Красители, которые выбираются, чтобы сделать татуировку, соответствуют всем гигиеническим требованиям и не имеют противопоказаний.
+                        Мы ответственно подходим к этому вопросу.
+                        В наших салонах используется только качественная и стойкая краска.
+                        Это очень важно, ведь краска вводится под кожу, то есть в тело.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div th:fragment="fourSection" xmlns:th="http://www.w3.org/1999/xhtml">
+<main class="sgroup-container">
+    <section class="sgroup">
+        <div class="close-sgroup">&times;</div>
+        <div class="title-box">Акварель</div>
+        <div class="info-box">
+            <div class="info-col-1">
+                <img th:src="@{/img/akva.jpg}" alt="..." />
+            </div>
+            <div class="info-col-2">
+                <p style="text-indent: 55px;">Рисунки, нарисованные акварельными красками, достаточно легко опознать: все они имеют яркие краски, размытые линии и мягкие переходы. Для достижения такого эффекта художники смешивают краски в воде и после переносят на холст.
+                    Таким же образом действует тату-мастер, только в качестве краски выступает пигментное химическое вещество.
+                    Обычное тату, даже выполненное в разноцветных тонах, мало схоже с картинами. Акварельные татуировки больше похожи на настоящие произведения искусства. Для создания такой картины мастера подбирают не только особые рисунки, но и краски. Палитра красок, что используется, может начинаться с черного и заканчиваться кислотно-зеленным.
+                    Одной из особенностей данного стиля выступает отличная передача образа. Если привычная татуировка может растянуться, в зависимости от выбранного размера, то акварельная продолжит сохранять свою первозданность.</p>
+            </div>
+        </div>
+    </section>
+    <section class="sgroup">
+        <div class="close-sgroup">&times;</div>
+        <div class="title-box">Блэкворк</div>
+        <div class="info-box">
+            <div class="info-col-1">
+                <img th:src="@{/img/blackwork.jpg}" alt="..." />
+            </div>
+            <div class="info-col-2">
+                <p style="text-indent: 55px;">Татуировки, выполненные в технике блэкворк – одни из самых оригинальных, загадочных и завораживающих нательных рисунков во всем мире. Интересный авангардизм таких татуировок одних поклонников тату пугает, а других, наоборот, привлекает. Поэтому в разнообразном мире татуировок существуют как поклонники, так и ярые противники татуировок в стиле блэкворк.
+                    Особенностью таких татуировок является сплошной черный рисунок и это вызывает противоречивые чувства. Кого-то восхищает и притягивает минимализм, простота и эстетичность, а другие не понимают и не принимают художественной ценности таких тату, и с опаской относятся к процессу нанесения рисунка.</p>
+            </div>
+        </div>
+    </section>
+    <section class="sgroup">
+        <div class="close-sgroup">&times;</div>
+        <div class="title-box">Биоорганика</div>
+        <div class="info-box">
+            <div class="info-col-1">
+                <img th:src="@{/img/bioorg.jpg}" alt="" />
+            </div>
+            <div class="info-col-2">
+                <p style="text-indent: 55px;">Биоорганика – это абсолютно самостоятельный стиль тату, который в последнее время пользуется невероятной популярностью.
+                    Впервые татуировки данного типа появились в конце восьмидесятых годов прошлого века. Родоначальником же этого направления является профессиональный американский мастер по имени Гай Атчисон.</p>
+            </div>
+        </div>
+    </section>
+    <section class="sgroup">
+        <div class="close-sgroup">&times;</div>
+        <div class="title-box">Графика</div>
+        <div class="info-box">
+            <div class="info-col-1">
+                <img th:src="@{/img/graphics.jpg}" alt="..." />
+            </div>
+            <div class="info-col-2">
+                <p style="text-indent: 55px;">Татуировка в Графике выполняется чёткими контурами с использованием линейной штриховки для закраса и теней.
+                    Исполнение тату в стиле Графика требует от мастера немалых усилий и определённых умений. Это связано со сложной техникой штриховки, которая может потребовать от татуировщика художественного образования и таланта.</p>
+            </div>
+        </div>
+    </section>
+</main>
+</div>
+
+<div th:fragment="aboutSalon" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="wrapper__index__up">
+    <div class="wrapper__index">
+        <div class="row">
+            <div class="col" id="cont__id"><p style="text-indent: 55px;">Студия художественной татуировки – это дизайнерская мастерская, где украшение тела рассматривается не как модный тренд современности.
+                Наш салон предлагает окунуться в мир искусства, где роспись тела татуировкой – это язык художества и глубинного смысла рисунка.
+                Мы чтим древние традиции и в сочетании с современными тенденциями и технологиями предлагаем новый взгляд на культуру тату.
+                Эволюция татуирования превратила роспись тела в утонченное искусство.
+                Профессионализм и творческий подход к каждому рисунку – та волшебная синергия, когда тело начинает говорить, приоткрывая занавес души.</p>
+            </div>
+            <div class="col">
+                <img class="img__master" th:src="@{/img/content.jpg}"   alt="..." width="500" height="450"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div th:fragment="masterCards" xmlns:th="http://www.w3.org/1999/xhtml">
+<section id="team">
+    <div class="container__staff1">
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card__s">
+                    <img th:src="@{/img/person1.jpg}" alt="..." />
+                    <div class="data">
+                        <h2>Ольга</h2>
+                        <i>Художник татуартист с 2017 года.</i>
+                        <p> Творческая и деятельная. Имеет опыт в тату индустрии более 5 лет. Предпочитает работу в стиле реализм и работу с цветом.</p>
+                        <p><a  href="AboutFirstMaster.html">Перейти</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card__s">
+                    <img th:src="@{/img/person2.jpg}" alt="..." />
+                    <div class="data">
+                        <h2>Алексей</h2>
+                        <i>Тату мастер с 2013 года.</i>
+                        <p>Предпочитает работать в стиле реализм и делает потрясающие чёрно-белые татуировки.
+                            Разрабатывает уникальные эскизы для тату по вашим пожеланиям.</p>
+                        <p><a href="AboutSecondMaster.html">Перейти</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card__s">
+                    <img th:src="@{/img/person3.jpg}" alt="..." />
+                    <div class="data">
+                        <h2>Юлия</h2>
+                        <i>Художник-график (книжная иллюстрация), более 10 лет тату-артист.</i>
+                        <p>Работает с 2012 года, нанося на тело клиентов только черные татуировки.</p>
+                        <p><a href="AboutThirdMaster.html">Перейти</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="card__s">
+                    <img th:src="@{/img/person4.jpg}" alt="..." />
+                    <div class="data">
+                        <h2>Иван</h2>
+                        <i>Тату мастер с 2018 года.</i>
+                        <p>Разрабатывает уникальные эскизы для тату по вашим пожеланиям.</p>
+                        <p><a href="AboutFourthMaster.html">Перейти</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
