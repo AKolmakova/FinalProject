@@ -1,0 +1,29 @@
+1. add packages to servlet
+
+    # IMAGES IN CATALOG
+2.
+    create folder in project root to store images
+    create property in application.properties to store path to image folder
+    create service (Interface, Impl):
+        - Resource get(String url);
+          Resource must have "InputStream content" field with file as stream
+
+        - void delete(String url);
+
+        - Resource (InputStream content, String fileName);
+        https://itchief.ru/examples/lab.php?topic=bootstrap&file=b3-thumbnails-plus
+
+
+com.kolmakova.TattooSalonProject.servlet.resources.ResourceServlet :
+
+1) В Servlet прилетает id  ресурса: достать id из url(из никит супер логики) (+)
+2) Достать ресурс с таким id из базы get by id;                              (+)
+
+3) После получения ресурса получить Input Stream с файловой системой использовать ResourceHandler; (+)
+4)В Servlete преобразовать этот стрим в Byte Arr засунуть в responce(меется пример);
+
+ пример запроса на servlet:
+ "/resource/1"
+
+ для отрисовки на html использовать относительный путь как для css только для url
+

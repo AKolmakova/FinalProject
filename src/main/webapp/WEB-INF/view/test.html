@@ -36,5 +36,20 @@
     </tbody>
 </table>
 
+<table border="1" cellpadding="10">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>picture</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="picture : ${pictures}">
+        <td th:text="${picture.id}"></td>
+        <td th:image="${picture.content}"></td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

@@ -15,6 +15,7 @@ public class BookingMapper implements RowMapper<Booking> {
         booking.setId(resultSet.getInt("id"));
         booking.setGrade(resultSet.getInt("grade"));
         booking.setDiscount(resultSet.getInt("discount"));
+        booking.setStatus(resultSet.getString("status"));
 
         return booking;
     }

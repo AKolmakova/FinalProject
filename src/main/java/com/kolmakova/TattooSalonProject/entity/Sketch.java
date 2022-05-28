@@ -2,34 +2,34 @@ package com.kolmakova.TattooSalonProject.entity;
 
 public class Sketch extends AbstractEntity {
 
-    private int id;
-    private int grade;
-    private boolean approved;
+    private Integer id;
+    private Integer grade;
+    private Boolean approved;
     private String color;
-    private int size;
-    private double price;
+    private Integer size;
+    private Double price;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 
-    public boolean isApproved() {
+    public Boolean isApproved() {
         return approved;
     }
 
-    public void setApproved(boolean approved) {
+    public void setApproved(Boolean approved) {
         this.approved = approved;
     }
 
@@ -41,19 +41,19 @@ public class Sketch extends AbstractEntity {
         this.color = color;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }

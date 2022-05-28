@@ -2,17 +2,17 @@ package com.kolmakova.TattooSalonProject.entity;
 
 public class Customer extends AbstractEntity {
 
-    private int id;
+    private Integer id;
     private String name;
     private String surname;
     private String phone;
-    private int rating;
+    private Integer rating;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -40,11 +40,11 @@ public class Customer extends AbstractEntity {
         this.phone = phone;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 }

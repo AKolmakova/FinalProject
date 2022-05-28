@@ -1,17 +1,17 @@
 package com.kolmakova.TattooSalonProject.entity;
 
-public class User extends AbstractEntity{
-    private int id;
+public class Account extends AbstractEntity{
+    private Integer id;
     private String login;
     private String password;
     private String email;
     private String role;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

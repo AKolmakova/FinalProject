@@ -13,8 +13,7 @@ public class ResourceMapper implements RowMapper<Resource> {
     public Resource mapRow(ResultSet resultSet, int i) throws SQLException {
         Resource resource = new Resource();
         resource.setId(resultSet.getInt("id"));
-        resource.setUrl(resultSet.getString("url"));
-
+        resource.setUrl(resultSet.getString("s_url"));
         return resource;
     }
 }

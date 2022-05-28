@@ -3,7 +3,6 @@ package com.kolmakova.TattooSalonProject.servlet.resources;
 import com.kolmakova.TattooSalonProject.dao.AbstractDAO;
 import com.kolmakova.TattooSalonProject.entity.Resource;
 import com.kolmakova.TattooSalonProject.service.ResourceHandler;
-import com.kolmakova.TattooSalonProject.service.impl.ResourceHandlerImpl;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
@@ -23,8 +22,6 @@ public class ResourceServlet extends HttpServlet {
     @Autowired
     private AbstractDAO<Resource> abstractDAO;
 
-    private static final String RESOURCE_PATH_TEMPLATE = "/resources/{id}";
-
     @Autowired
     private ResourceHandler resourceHandler;
 
@@ -34,10 +31,7 @@ public class ResourceServlet extends HttpServlet {
                 .replace(req.getContextPath(), "")
                 .split("/");
 
-//        String fileName = RESOURCE_PATH_TEMPLATE
-//                .replace("{id}",pathParts[2]);
-
-        int id=Integer.parseInt(pathParts[2]);
+        int id = Integer.parseInt(pathParts[2]);
         Resource resource = abstractDAO.getOne(id);
         Resource resource1 = resourceHandler.get(resource.getUrl());
 

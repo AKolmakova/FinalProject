@@ -11,8 +11,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.LocaleContextResolver;
-import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.i18n.CookieLocaleResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -106,7 +108,7 @@ public class SpringConfig extends WebMvcConfigurerAdapter {
         ReloadableResourceBundleMessageSource source = new ReloadableResourceBundleMessageSource();
 
         source.setDefaultEncoding("UTF-8");
-        source.addBasenames("classpath:/locales/locale");
+        source.addBasenames("WEB-INF/classes/locales/locale");
 
         return source;
     }

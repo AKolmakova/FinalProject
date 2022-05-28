@@ -1,6 +1,6 @@
 package com.kolmakova.TattooSalonProject.dao.mapper;
 
-import com.kolmakova.TattooSalonProject.entity.Theme;
+import com.kolmakova.TattooSalonProject.entity.Tag;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
@@ -8,13 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
-public class ThemeMapper implements RowMapper<Theme> {
+public class ThemeMapper implements RowMapper<Tag> {
     @Override
-    public Theme mapRow(ResultSet resultSet, int i) throws SQLException {
-        Theme theme = new Theme();
+    public Tag mapRow(ResultSet resultSet, int i) throws SQLException {
+        Tag theme = new Tag();
         theme.setId(resultSet.getInt("id"));
         theme.setName(resultSet.getString("name"));
-        theme.setType(resultSet.getString("type"));
 
         return theme;
     }
