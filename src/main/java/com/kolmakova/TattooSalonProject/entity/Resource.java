@@ -3,16 +3,19 @@ package com.kolmakova.TattooSalonProject.entity;
 import java.io.InputStream;
 
 public class Resource extends AbstractEntity {
-    private InputStream content;
-    private int id;
+
+    private InputStream inputStream;
+    private byte[] content;
+    private String strContent;
+    private Integer id;
     private String url;
 
-    public InputStream getContent() {
-        return content;
+    public InputStream getInputStream() {
+        return inputStream;
     }
 
-    public void setContent(InputStream content) {
-        this.content = content;
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 
     public Integer getId() {
@@ -29,5 +32,21 @@ public class Resource extends AbstractEntity {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public byte[] getContent() {
+        return content;
+    }
+
+    public void setContent(byte[] content) {
+        this.content = content;
+    }
+
+    public String getStrContent() {
+        return strContent;
+    }
+
+    public void setStrContent(String strContent) {
+        this.strContent = strContent;
     }
 }

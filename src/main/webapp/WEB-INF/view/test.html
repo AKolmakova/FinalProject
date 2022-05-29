@@ -46,7 +46,9 @@
     <tbody>
     <tr th:each="picture : ${pictures}">
         <td th:text="${picture.id}"></td>
-        <td th:image="${picture.content}"></td>
+        <td>
+            <img th:src="@{/resource/__${picture.id}__}">
+        </td>
     </tr>
     </tbody>
 </table>

@@ -1,17 +1,10 @@
 <div th:fragment="banner" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div id="slider">
-        <div>
-            <img th:src="@{/img/slideTattoo2.jpg}" alt="..." height="710">
+    <div id="slider" >
+        <div th:each="pic : ${banner}">
+            <img th:src="@{/resource/__${pic.id}__}" alt="..." height="710">
         </div>
-        <div>
-            <img th:src="@{/img/slideTattoo4.jpg}" alt="..." height="710">
         </div>
-        <div>
-            <img th:src="@{/img/slideTattoo3.jpg}" alt="..." height="710">
-        </div>
-    </div>
 </div>
-
 
 <div th:fragment="newsOrAdvertising" xmlns:th="http://www.w3.org/1999/xhtml">
 

@@ -24,7 +24,7 @@ public class ResourceHandlerImpl implements ResourceHandler {
 
         try {
             File file = new File(filePath);
-            resource.setContent(new FileInputStream(file));
+            resource.setInputStream(new FileInputStream(file));
         } catch (FileNotFoundException e) {
             LOG.warn(String.format("Resource with url %s not found!", filePath), e);
         }
@@ -50,7 +50,7 @@ public class ResourceHandlerImpl implements ResourceHandler {
         try {
             File fileToSave = new File(filePath);
             FileUtils.copyInputStreamToFile(content, fileToSave);
-            resource.setContent(new FileInputStream(fileToSave));
+            resource.setInputStream(new FileInputStream(fileToSave));
         } catch (IOException e) {
             LOG.warn(String.format("Resource with url %s not saved cause of ", filePath), e);
         }

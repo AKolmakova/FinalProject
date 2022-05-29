@@ -79,3 +79,16 @@ CREATE TABLE sketch_theme (
         ON DELETE SET NULL
 
 );
+
+DROP TABLE IF EXISTS dynamic_content;
+CREATE TABLE dynamic_content (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  element_type VARCHAR(255),
+  location VARCHAR(255),
+   resource_id INT,
+
+   FOREIGN KEY (resource_id) REFERENCES resource  (id)
+          ON UPDATE CASCADE
+          ON DELETE SET NULL,
+
+);

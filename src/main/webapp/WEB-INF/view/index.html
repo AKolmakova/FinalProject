@@ -21,7 +21,7 @@
 
     <!-- Style CSS -->
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
-    <th:style>
+    <style>
         .sgroup:nth-child(1) {
         top: 0;
         left: 0;
@@ -42,10 +42,27 @@
         left: 50%;
         background-image: url([[@{/img/graphics.jpg}]]);
         }
-    </th:style>
+    </style>
 </head>
 
 <body>
+
+<!--<table border="1" cellpadding="10">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>id</th>-->
+<!--        <th>picture</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="pic : ${banner}">-->
+<!--        <td th:text="${pic.id}"></td>-->
+<!--        <td>-->
+<!--            <img th:src="@{/resource/__${pic.id}__}">-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
 
 <div th:include="common/commonHandler.html::commonNavbarHandler"></div>
 <div th:include="index/indexHandler.html::indexBannerHandler"></div>

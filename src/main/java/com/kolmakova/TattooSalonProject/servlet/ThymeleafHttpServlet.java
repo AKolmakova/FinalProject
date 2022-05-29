@@ -1,5 +1,6 @@
 package com.kolmakova.TattooSalonProject.servlet;
 
+import com.kolmakova.TattooSalonProject.servlet.request.RequestContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
@@ -25,18 +26,22 @@ public abstract class ThymeleafHttpServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        WebContext context = new WebContext(req, resp, req.getServletContext());
-        String view = get(req, resp, context);
-        resp.setCharacterEncoding("UTF-8");
-        engine.process(view, context, resp.getWriter());
+        WebContext webContext = new WebContext(req, resp, req.getServletContext());
+        RequestContext ctx = new RequestContext();
+        String view = get(req, resp, ctx);
+
+        webContext.setVariables(ctx.getVariables());
+        engine.process(view, webContext, resp.getWriter());
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        WebContext context = new WebContext(req, resp, req.getServletContext());
-        String view = post(req, resp, context);
-        resp.setCharacterEncoding("UTF-8");
-        engine.process(view, context, resp.getWriter());
+        WebContext webContext = new WebContext(req, resp, req.getServletContext());
+        RequestContext ctx = new RequestContext();
+        String view = post(req, resp, ctx);
+
+        webContext.setVariables(ctx.getVariables());
+        engine.process(view, webContext, resp.getWriter());
     }
 
     @Override
@@ -46,7 +51,7 @@ public abstract class ThymeleafHttpServlet extends HttpServlet {
                 config.getServletContext());
     }
 
-    protected abstract String get(HttpServletRequest req, HttpServletResponse resp, WebContext context) throws IOException;
+    protected abstract String get(HttpServletRequest req, HttpServletResponse resp, RequestContext ctx) throws IOException;
 
-    protected abstract String post(HttpServletRequest req, HttpServletResponse resp, WebContext context);
+    protected abstract String post(HttpServletRequest req, HttpServletResponse resp, RequestContext ctx);
 }

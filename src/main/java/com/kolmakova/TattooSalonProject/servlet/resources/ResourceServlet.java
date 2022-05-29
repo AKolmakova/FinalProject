@@ -35,7 +35,7 @@ public class ResourceServlet extends HttpServlet {
         Resource resource = abstractDAO.getOne(id);
         Resource resource1 = resourceHandler.get(resource.getUrl());
 
-        try (InputStream is = resource1.getContent()) {
+        try (InputStream is = resource1.getInputStream()) {
             resp.getOutputStream().write(IOUtils.toByteArray(is));
         }
     }
