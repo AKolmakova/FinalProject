@@ -1,40 +1,12 @@
-<div th:fragment="indexBannerHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::banner"></div>
+<div th:fragment="indexContentHandler" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:include="index/fgm/indexFragments.html::banner" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::newsOrAdvertising" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::contentDivider(text= 'Наши работы — наша гордость', divClass='info_box_content__main')"></div>
+    <div th:include="index/fgm/indexFragments.html::articles" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::otherContentDivider(text = 'Предлагаем тату в стилях')"></div>
+    <div th:include="index/fgm/indexFragments.html::fourSection" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html: otherContentDivider(text = 'Наш салон')"></div>
+    <div th:include="index/fgm/indexFragments.html::aboutSalon" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::otherContentDivider(text = 'Наша команда')"></div>
+    <div th:include="index/fgm/indexFragments.html::masterCards" xmlns:th="http://www.w3.org/1999/xhtml"></div>
 </div>
-
-<div th:fragment="indexNewsOrAdvertisingHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::newsOrAdvertising"></div>
-</div>
-
-<div th:fragment="indexFirstContentDividerHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::firstContentDivider"></div>
-</div>
-
-<div th:fragment="indexSecondContentDividerHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::secondContentDivider"></div>
-</div>
-
-<div th:fragment="indexThirdContentDividerHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::thirdContentDivider"></div>
-</div>
-
-<div th:fragment="indexFourthContentDividerHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::fourthContentDivider"></div>
-</div>
-
-<div th:fragment="indexArticlesHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::articles"></div>
-</div>
-
-<div th:fragment="indexFourSectionHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::fourSection"></div>
-</div>
-
-<div th:fragment="indexAboutSalonHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::aboutSalon"></div>
-</div>
-
-<div th:fragment="indexMasterCardsHandler" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:include="index/fgm/indexFragments.html::masterCards"></div>
-</div>
-

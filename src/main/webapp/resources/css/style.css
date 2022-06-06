@@ -308,10 +308,12 @@ div#slider div img {
     left: -200%;
   }
   70% {
-    left: -200%;
-  }
+      left:-200%;
+    }
+      90% {
+          left: 0%;
+        }
 }
-
 
   .info_box {  
     margin-top: 40px;

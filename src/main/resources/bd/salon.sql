@@ -68,13 +68,13 @@ CREATE TABLE tag (
 DROP TABLE IF EXISTS sketch_tag;
 CREATE TABLE sketch_theme (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  sketch_id INT,
-  tag_id INT,
+  s_sketch_id INT,
+  s_tag_id INT,
 
-  FOREIGN KEY (sketch_id) REFERENCES sketch  (id)
+  FOREIGN KEY (s_sketch_id) REFERENCES sketch (id)
         ON UPDATE CASCADE
         ON DELETE SET NULL,
-   FOREIGN KEY (tag_id) REFERENCES tag  (id)
+   FOREIGN KEY (s_tag_id) REFERENCES tag (id)
         ON UPDATE CASCADE
         ON DELETE SET NULL
 
@@ -82,13 +82,13 @@ CREATE TABLE sketch_theme (
 
 DROP TABLE IF EXISTS dynamic_content;
 CREATE TABLE dynamic_content (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  element_type VARCHAR(255),
-  location VARCHAR(255),
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   s_element_type VARCHAR(255),
+   s_location VARCHAR(255),
    resource_id INT,
 
    FOREIGN KEY (resource_id) REFERENCES resource  (id)
           ON UPDATE CASCADE
-          ON DELETE SET NULL,
+          ON DELETE SET NULL
 
 );
