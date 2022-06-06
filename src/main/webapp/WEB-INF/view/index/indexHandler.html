@@ -1,0 +1,12 @@
+<div th:fragment="indexContentHandler" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:include="index/fgm/indexFragments.html::banner" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::newsOrAdvertising" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::contentDivider(text= 'Наши работы — наша гордость', divClass='info_box_content__main')"></div>
+    <div th:include="index/fgm/indexFragments.html::articles" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::otherContentDivider(text = 'Предлагаем тату в стилях')"></div>
+    <div th:include="index/fgm/indexFragments.html::fourSection" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html: otherContentDivider(text = 'Наш салон')"></div>
+    <div th:include="index/fgm/indexFragments.html::aboutSalon" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div th:include="index/fgm/indexFragments.html::otherContentDivider(text = 'Наша команда')"></div>
+    <div th:include="index/fgm/indexFragments.html::masterCards" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+</div>

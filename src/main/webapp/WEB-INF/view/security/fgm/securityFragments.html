@@ -1,0 +1,55 @@
+<div th:fragment="signIn" xmlns:th="http://www.w3.org/1999/xhtml">
+    <!--    Вход-->
+    <form class="container-fluid" method="post" th:action="@{/signIn}">
+        <div class="col-md-4 offset-md-4">
+            <div class="form-container">
+                <div class="form-icon"><i class="fa fa-user"></i></div>
+                <h3 class="title" th:text="Авторизация"></h3>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label th:text="email"></label>
+                        <input class="form-control" name="login" placeholder="email address" required type="text">
+                    </div>
+                    <div class="form-group">
+                        <label th:text="password"></label>
+                        <input class="form-control" name="password" placeholder="password" required type="password">
+                    </div>
+                    <button class="btn__signIn btn-default" name="Submit" th:text="Войти" type="submit"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--SignUp-->
+<!--Регистрация-->
+<div th:fragment="signUp" xmlns:th="http://www.w3.org/1999/xhtml">
+    <form class="container-fluid" method="post" th:action="@{/signUp}">
+        <div class="col-md-4 offset-md-4">
+            <div class="form-container">
+                <div class="form-icon"><i class="fa fa-user"></i></div>
+                <h3 class="title" th:text="Регистрация"></h3>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label th:text="login"></label>
+                            <input class="form-control" name="login" placeholder="login">
+                        </div>
+                        <div class="form-group">
+                            <label th:text="password"></label>
+                            <input class="form-control" name="password" placeholder="password" type="password">
+                        </div>
+                        <div class="form-group">
+                            <label th:text="email"></label>
+                            <input class="form-control" name="email" placeholder="email address" type="email">
+                        </div>
+                        <label th:text="phone"></label>
+                        <input class="form-control" name="phoneNumber" placeholder="phone">
+                    </div>
+                    <button class="btn__signUp btn-default" name="Submit" th:text="Зарегистрироваться"
+                            type="submit"></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
